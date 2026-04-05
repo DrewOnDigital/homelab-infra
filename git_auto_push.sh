@@ -42,10 +42,6 @@ echo " "
 git commit -m "Automated commit $(date +'%Y-%m-%d %H:%M:%S')"
 sleep 7
 echo " "
-echo " "
-echo " "
-echo " "
-echo "Committed the aforementioned changes with message: Automated commit on: $(date +'%Y-%m-%d %H:%M:%S')"
 sleep 7
 echo " "
 echo " "
@@ -58,12 +54,7 @@ echo " "
 echo " "
 echo " "
 echo " "
-echo "Committed changes with message: Changed file(s): $(git diff --name-only)"
-sleep 7
-echo " "
-echo " "
-echo " "
-echo " "
+
 
 # push
 git push origin master
