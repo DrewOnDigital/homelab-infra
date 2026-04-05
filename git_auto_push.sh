@@ -10,35 +10,47 @@
 
 
 #add changes we want to stage
-git add .
-echo "Added changes to staging area"
+sleep 3
 echo "$(git status)"
-echo " "
-echo " "
-echo " "
 sleep 7
+echo " "
+echo " "
+echo " "
+echo "Please abort this script NOW if you do not want to commit the aforementioned changes! Otherwise, the script will continue and these changes will be added to the commit."
+sleep 7
+echo " "
+echo " "
+echo " "
+
+git add .
+echo "Aformentioned changes have been staged for commit."
+sleep 7
+echo " "
+echo " "
+echo " "
 
 # commit
 git commit -m "Automated commit $(date +'%Y-%m-%d %H:%M:%S')"
 sleep 7
 echo " "
 echo " "
-echo "Committed changes with message: Automated commit on: $(date +'%Y-%m-%d %H:%M:%S')"
-echo " "
-echo " "
+echo "Committed the aforementioned changes with message: Automated commit on: $(date +'%Y-%m-%d %H:%M:%S')"
 sleep 7
+echo " "
+echo " "
 
 git commit -m "Changed file(s): $(git diff --name-only)"
+sleep 7
 echo " "
 echo " "
 echo "Committed changes with message: Changed file(s): $(git diff --name-only)"
-echo " "
-echo " "
-
 sleep 7
+echo " "
+echo " "
 
 # push
 git push origin master
+sleep 7
 echo " "
 echo " "
 echo "Pushed changes to remote repository"
