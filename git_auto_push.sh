@@ -7,27 +7,31 @@
 git checkout master
 echo "Checked out to master branch"
 echo " "
-sleep 2
+sleep 7
 
 # add changes
 git add .
 echo "Added changes to staging area"
 echo " "
-sleep 2
+echo " "
+sleep 7
 
 # commit
 git commit -m "Automated commit $(date +'%Y-%m-%d %H:%M:%S')"
 echo " "
-sleep 2
+echo " "
+sleep 7
 
 echo "Committed changes with message: Automated commit $(date +'%Y-%m-%d %H:%M:%S')"
 echo " "
-sleep 2
+echo " "
+sleep 7
 
 git commit -m "Changed file(s): $(git diff --name-only)"
 echo "Committed changes with message: Changed file(s): $(git diff --name-only)"
 echo " "
-sleep 2
+echo " "
+sleep 7
 
 # push
 git push origin master
