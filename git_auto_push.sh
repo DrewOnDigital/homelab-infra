@@ -1,22 +1,15 @@
 #!/bin/bash
-# go to your repo
+# be sure this script is in directory of your git repo or change to that directory before running the script
 
-# cd /path/to/your/repo
+# cd /path/to/the/new//or/current/repo
 
 # make sure we are on main (or your branch)
-git checkout master
-echo " "
-echo " "
-echo " "
-sleep 7
 
-echo "Checked out to master branch"
-echo " "
-echo " "
-echo " "
-sleep 7
+# be sure files are added to the repo and saved locally before running the script
 
-# add changes
+
+
+#add changes we want to stage
 git add .
 echo "Added changes to staging area"
 echo "$(git status)"
@@ -28,8 +21,7 @@ sleep 7
 # commit
 git commit -m "Automated commit $(date +'%Y-%m-%d %H:%M:%S')"
 sleep 7
-
-echo "Committed changes with message: Automated commit $(date +'%Y-%m-%d %H:%M:%S')"
+echo "Committed changes with message: Automated commit on: $(date +'%Y-%m-%d %H:%M:%S')"
 echo " "
 echo " "
 sleep 7
