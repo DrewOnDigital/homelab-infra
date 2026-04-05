@@ -57,7 +57,7 @@ echo " "
 
 
 # push
-git push origin master
+git push -u origin master
 sleep 7
 echo " "
 echo " "
