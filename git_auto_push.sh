@@ -21,12 +21,16 @@ sleep 7
 # commit
 git commit -m "Automated commit $(date +'%Y-%m-%d %H:%M:%S')"
 sleep 7
+echo " "
+echo " "
 echo "Committed changes with message: Automated commit on: $(date +'%Y-%m-%d %H:%M:%S')"
 echo " "
 echo " "
 sleep 7
 
 git commit -m "Changed file(s): $(git diff --name-only)"
+echo " "
+echo " "
 echo "Committed changes with message: Changed file(s): $(git diff --name-only)"
 echo " "
 echo " "
@@ -35,3 +39,9 @@ sleep 7
 
 # push
 git push origin master
+echo " "
+echo " "
+echo "Pushed changes to remote repository"
+sleep 2
+echo " "
+echo " "
