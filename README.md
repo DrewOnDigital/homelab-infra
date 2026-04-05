@@ -2,9 +2,9 @@
 
 # Andrew Jones
 # https://www.linkedin.com/in/andrew-jones-8779b6247/
-# twitch.tv/DrewOnDigital
-# youtube.com/@DrewonDigital
-# tiktok.com/@drewondigital
+# https://twitch.tv/DrewOnDigital
+# https://youtube.com/@DrewonDigital
+# https://tiktok.com/@drewondigital
 
 
 ## 🧠 Purpose
