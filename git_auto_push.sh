@@ -12,7 +12,7 @@
 
 
 # set the remote URL to the HTTPS version of your GitHub repository
-# git remote set-url origin https://github.com/drewondigital/homelab-infra.git
+git remote set-url origin https://github.com/drewondigital/homelab-infra.git
 
 sleep 3
 echo " "
