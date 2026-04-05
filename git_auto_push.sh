@@ -1,5 +1,7 @@
 #!/bin/bash
-# be sure this script is in directory of your git repo or change to that directory before running the script
+# IMPORTANT: #
+
+#be sure this script is in directory of your git repo or change to that directory before running the script
 
 # cd /path/to/the/new//or/current/repo
 
@@ -9,8 +11,12 @@
 
 
 
-#add changes we want to stage
+# set the remote URL to the HTTPS version of your GitHub repository
+git remote set-url origin https://github.com/drewondigital/homelab-infra.git
+
 sleep 3
+echo " "
+echo " "
 echo "$(git status)"
 sleep 7
 echo " "
@@ -22,6 +28,9 @@ echo " "
 echo " "
 echo " "
 
+
+
+# add changes we want to stage
 git add .
 echo "Aformentioned changes have been staged for commit."
 sleep 7
