@@ -1,7 +1,7 @@
 #!/bin/bash
 # IMPORTANT: #
 
-#be sure this script is in directory of your git repo or change to that directory before running the script
+# be sure this script is in directory of your git repo or change to that directory before running the script
 
 # cd /path/to/the/new//or/current/repo
 
