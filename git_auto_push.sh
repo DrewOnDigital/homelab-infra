@@ -1,67 +1,60 @@
 #!/bin/bash
-# IMPORTANT: #
 
-# be sure this script is in directory of your git repo or change to that directory before running the script
+set -euo pipefail
+# git_auto_push.sh
+# Usage: Run from the root of your homelab-infra repo directory.
+# Stages all changes, commits with a timestamped message, and pushes to origin/master.
 
-# cd /path/to/the/new//or/current/repo
+# Safety check — make sure we're inside a git repo
+if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+  echo "ERROR: Not inside a git repository. Navigate to your repo directory first."
+  exit 1
+fi
 
-# make sure we are on main (or your branch)
+# Set remote to HTTPS (safe to run repeatedly)
+git remote set-url origin https://github.com/DrewOnDigital/homelab-infra.git
 
-# be sure files are added to the repo and saved locally before running the script
+echo ""
+echo "========================================"
+echo " Current repo status:"
+echo "========================================"
+git status
+echo ""
 
+# Show what's changed before committing
+CHANGED=$(git diff --name-only; git ls-files --others --exclude-standard)
 
+if [ -z "$CHANGED" ] && git diff --cached --quiet; then
+  echo "Nothing to commit. Working tree is clean."
+  exit 0
+fi
 
-# set the remote URL to the HTTPS version of your GitHub repository
-git remote set-url origin https://github.com/drewondigital/homelab-infra.git
-
+echo "Files to be committed:"
+echo "$CHANGED"
+echo ""
+echo "Script will continue in 3 seconds... Press Ctrl+C to abort."
 sleep 3
-echo " "
-echo " "
-echo "$(git status)"
-sleep 2
-echo " "
-echo " "
-echo " "
-echo "Please abort this script NOW if you do not want to commit the aforementioned changes! Otherwise, the script will continue and these changes will be added to the commit."
-sleep 2
-echo " "
-echo " "
-echo " "
+echo ""
 
-
-
-# add changes we want to stage
+# Stage all changes
 git add .
-echo "Aformentioned changes have been staged for commit."
-sleep 2
-echo " "
-echo " "
-echo " "
+echo "Changes staged."
+echo ""
 
-# commit
-git commit -m "Automated commit $(date +'%Y-%m-%d %H:%M:%S')"
-sleep 2
-echo " "
-sleep 2
-echo " "
-echo " "
-echo " "
-echo " "
+# Single commit with timestamp and changed files
+TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')
+FILES=$(git diff --cached --name-only | tr '\n' ' ')
+git commit -m "chore: auto-commit ${TIMESTAMP} | changed: ${FILES}"
 
-git commit -m "Changed file(s): $(git diff --name-only)"
-sleep 2
-echo " "
-echo " "
-echo " "
-echo " "
+echo ""
+echo "Committed. Pushing to origin/master..."
+echo ""
 
-
-# push
+# Push
 git push -u origin master
-sleep 2
-echo " "
-echo " "
-echo "Pushed changes to remote repository"
-sleep 2
-echo " "
-echo " "
+
+echo ""
+echo "========================================"
+echo " Done. Changes pushed to GitHub."
+echo "========================================"
+echo ""
