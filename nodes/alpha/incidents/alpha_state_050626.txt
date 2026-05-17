@@ -1,0 +1,44 @@
+  LV              VG  Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  data            pve twi-aotz--  23.78g             0.00   1.58                            
+  [data_tdata]    pve Twi-ao----  23.78g                                                    
+  [data_tmeta]    pve ewi-ao----   1.00g                                                    
+  [lvol0_pmspare] pve ewi-------   1.00g                                                    
+  root            pve -wi-ao---- <24.59g                                                    
+  swap            pve -wi-ao----   2.00g                                                    
+  --- Volume group ---
+  VG Name               pve
+  System ID             
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  92
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               2
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               <57.50 GiB
+  PE Size               4.00 MiB
+  Total PE              14719
+  Alloc PE / Size       13407 / 52.37 GiB
+  Free  PE / Size       1312 / 5.12 GiB
+  VG UUID               r0cNEJ-rt7l-POst-viNF-iUmk-GtM9-DUM29N
+   
+Filesystem            Size  Used Avail Use% Mounted on
+udev                  6.0G     0  6.0G   0% /dev
+tmpfs                 1.4G  1.6M  1.4G   1% /run
+/dev/mapper/pve-root   25G  8.1G   15G  36% /
+tmpfs                 6.8G   46M  6.8G   1% /dev/shm
+efivarfs              128K   11K  113K   9% /sys/firmware/efi/efivars
+tmpfs                 5.0M     0  5.0M   0% /run/lock
+tmpfs                 6.8G     0  6.8G   0% /tmp
+/dev/sda2             511M  8.8M  503M   2% /boot/efi
+/dev/fuse             128M   20K  128M   1% /etc/pve
+tmpfs                 1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs                 1.4G  8.0K  1.4G   1% /run/user/0
+tmpfs                 1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+               total        used        free      shared  buff/cache   available
+Mem:            13Gi       2.6Gi        10Gi        47Mi       562Mi        10Gi
+Swap:          2.0Gi          0B       2.0Gi
